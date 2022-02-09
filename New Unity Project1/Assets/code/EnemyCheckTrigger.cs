@@ -5,8 +5,10 @@ namespace code
     public class EnemyCheckTrigger : MonoBehaviour
 
     {
-        public bool _checkTrigger;
         [SerializeField] private Enemy _enemy;
+        
+        public bool _checkTrigger;
+
 
         private void Start()
         {
@@ -17,9 +19,9 @@ namespace code
         {
             if (other.TryGetComponent(out Player player))
             {
+                _enemy._isCheckTrigger= true;
                 _checkTrigger = true;
                 _enemy.MovePlayer();
-                Debug.Log(_checkTrigger);
             }
         }
 
@@ -27,8 +29,8 @@ namespace code
         {
             if (other.TryGetComponent(out Player player))
             {
+                _enemy._isCheckTrigger= false;
                 _checkTrigger = false;
-                _enemy._isCheckTrigger = false;
                 _enemy.MovePatrol();
             }
         }
