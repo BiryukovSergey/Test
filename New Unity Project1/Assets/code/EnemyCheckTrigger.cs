@@ -19,7 +19,6 @@ namespace code
         {
             if (other.TryGetComponent(out Player player))
             {
-                _enemy._isCheckTrigger= true;
                 _checkTrigger = true;
                 _enemy.MovePlayer();
             }
@@ -29,7 +28,6 @@ namespace code
         {
             if (other.TryGetComponent(out Player player))
             {
-                _enemy._isCheckTrigger= false;
                 _checkTrigger = false;
                 _enemy.MovePatrol();
             }

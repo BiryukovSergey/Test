@@ -19,8 +19,8 @@ namespace code
         private float _currentX;
         private float _currentY;
         private int _countArray = 10;
+        private bool _isIdentityObj = false;
         private List<GameObject> _listWall;
-        private bool identityObj = false;
 
 
         private void Awake()
@@ -73,13 +73,13 @@ namespace code
             {
                 if (obj.transform.position == _currentWallPosition)
                 {
-                    identityObj = true;
+                    _isIdentityObj = true;
                 }
             }
 
-            if (identityObj)
+            if (_isIdentityObj)
             {
-                identityObj = false;
+                _isIdentityObj = false;
                 FreePosition();
             }
 

@@ -5,15 +5,15 @@ namespace code
 {
     public class Enemy : MonoBehaviour
     {
-        public bool _isCheckTrigger;
-        private GridGenerator _gridGenerator;
+        [SerializeField]private EnemyCheckTrigger[] _enemyCheckTrigger;
         private GameObject _player;
+        private GridGenerator _gridGenerator;
         private NavMeshAgent _navMeshAgent;
         private Noise _noise;
         private Vector3 _start;
         private Vector3 _finish;
+        public bool IsCheckTrigger;
         private bool _isMoveFinish = true;
-        [SerializeField]private EnemyCheckTrigger[] _enemyCheckTrigger;
 
         private void Start()
         {
@@ -29,20 +29,19 @@ namespace code
 
         private void FixedUpdate()
         {
-            
             for (int i = 0; i < _enemyCheckTrigger.Length; i++)
             {
                 if (_enemyCheckTrigger[i]._checkTrigger == true)
                 {
-                    _isCheckTrigger = true;
+                    IsCheckTrigger = true;
                 }
             }
-            if (_noise.CurrentNoise == 10 && _isCheckTrigger == false)
+            if (_noise.CurrentNoise == 10 && IsCheckTrigger == false)
             {
                 MovePlayer();
             }
 
-            else if (_isCheckTrigger == false)
+            else if (IsCheckTrigger == false)
             {
                 MovePatrol();
             }
