@@ -35,8 +35,12 @@ namespace code
                 {
                     IsCheckTrigger = true;
                 }
+                else if (_enemyCheckTrigger[i]._checkTrigger == false)
+                {
+                    IsCheckTrigger = false; // если все тригеры фолс, тогда IsCheck = false, возвращается к патрулю
+                }
             }
-            if (_noise.CurrentNoise == 10 && IsCheckTrigger == false)
+            if (_noise.CurrentNoise == 10 && IsCheckTrigger == false || IsCheckTrigger  == true) // дописал тригер теперь вроде работает без бага
             {
                 MovePlayer();
             }

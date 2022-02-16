@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
         
         _moveX = Input.GetAxis("Horizontal");
         _moveY = Input.GetAxis("Vertical");
-        _move = new Vector3(_moveX, 0, _moveY);
+        _move = new Vector3(_moveX, 0, _moveY).normalized; // исправил движение по диагонали
         IsPlayerMove = Vector3.zero != _move ? true: false;
         transform.Translate(_move * Time.deltaTime * _speedPlayer);
     }

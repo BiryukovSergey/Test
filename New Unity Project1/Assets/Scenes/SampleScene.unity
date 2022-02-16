@@ -1444,7 +1444,8 @@ MonoBehaviour:
   _exitPrefab: {fileID: 2249188896182364031, guid: 2a04cb9e5e418694893ab4b50609fc96, type: 3}
   _playerPrefab: {fileID: 8991602727549246426, guid: fa7d319b71c7d8444bd215917bc6727d, type: 3}
   _enemyPrefab: {fileID: 4784560317289141566, guid: 520c86ecf20ea53469cc7dd8f974a22b, type: 3}
-  _countWall: 10
+  _countWall: 30
+  _nullPrefab: {fileID: 4773936271343959949, guid: f0c50f3a7ddef9e419e18c2bcf12c687, type: 3}
 --- !u!4 &1365615816
 Transform:
   m_ObjectHideFlags: 0

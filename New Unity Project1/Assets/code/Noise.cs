@@ -29,6 +29,7 @@ public class Noise : MonoBehaviour
     private void NoisePlayer()
     {
         _currentTime += Time.deltaTime;
+        
         if (_player.IsPlayerMove)
         {
             _finalTime = 1;
@@ -41,7 +42,7 @@ public class Noise : MonoBehaviour
         if (_currentTime >= _finalTime)
         {
             _currentTime = 0;
-
+            
             if (_finalTime == 1)
             {
                 ChangeNoise(3);
